@@ -1,11 +1,11 @@
 const express = require('express');
-const city_route = express();
-const bodyParser = require('body-parser');
+const city_route = express.Router();
+// const bodyParser = require('body-parser');
 
 
 
-city_route.use(bodyParser.json());
-city_route.use(bodyParser.urlencoded({extended:true}));
+// city_route.use(bodyParser.json());
+// city_route.use(bodyParser.urlencoded({extended:true}));
 
 const cityController = require('../controller/citycontroller')
 

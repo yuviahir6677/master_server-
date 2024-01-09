@@ -1,21 +1,13 @@
+const Auth = require('../middlewar/Auth');
+
 const Country =require('../model/countryModel')
-const State =require('../model/stateModel')
-const City =require('../model/cityModel')
+
 
 
 var message = "Invalid request";
 var status = 0;
 
-const postCountries = async(req,res) => {
-    // try {
-    //     const countries = await Country.find({})
-    //     res.status(200).send({success:true,msg:'countries data',data:countries});
-
-        
-    // } catch (error) {
-    //     res.status(400).send({success:false,msg:error.message});
-        
-    // }
+const postCountries =  async (req,res) => {
     if (req.body.id != '') {
         let result = await
             Country.updateOne({
@@ -117,21 +109,30 @@ const putCountries = async(req,res) => {
 }
 
 
-const getCities = async(req,res) => {
-    try {
-        const cities = await City.find({state_name:req.body.state_name})
-        res.status(200).send({success:true,msg:'cities data',data:cities});
+// const getCities = async(req,res) => {
+//     try {
+//         const cities = await City.find({state_name:req.body.state_name})
+//         res.status(200).send({success:true,msg:'cities data',data:cities});
 
         
-    } catch (error) {
-        res.status(400).send({success:false,msg:error.message});
+//     } catch (error) {
+//         res.status(400).send({success:false,msg:error.message});
         
-    }
-}
+//     }
+// }
+
+    // try {
+    //     const countries = await Country.find({})
+    //     res.status(200).send({success:true,msg:'countries data',data:countries});
+
+        
+    // } catch (error) {
+    //     res.status(400).send({success:false,msg:error.message});
+        
+    // }
 
 module.exports = {
     postCountries,
     getCountries,
     putCountries,
-    getCities
 }

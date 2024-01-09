@@ -1,11 +1,11 @@
 const express = require('express');
-const state_route = express();
-const bodyParser = require('body-parser');
+const state_route = express.Router();
+// const bodyParser = require('body-parser');
 
 
 
-state_route.use(bodyParser.json());
-state_route.use(bodyParser.urlencoded({extended:true}));
+// state_route.use(bodyParser.json());
+// state_route.use(bodyParser.urlencoded({extended:true}));
 
 const stateController = require('../controller/stateController')
 
